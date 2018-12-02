@@ -136,10 +136,16 @@ def try_methods():
       -- backward  100 units
     """
     ###########################################################################
-    # TODO: 4. Implement and test this function, per its doc-string above.
+    # DONE: 4. Implement and test this function, per its doc-string above.
     #   The testing code (in main) is already written for you.
     ###########################################################################
 
+bob = rg.SimpleTurtle('classic')
+bob.pen = rg.Pen('brown',5)
+bob.forward(150)
+bob.left(90)
+bob.forward(50)
+bob.backward(100)
 
 ###############################################################################
 # IMPORTANT: Read the NOTE below before you try to implement the next function!
@@ -152,7 +158,7 @@ def try_functions():
      -- One jumps to (-50, 50), then moves (while drawing) to (100, 100)
     """
     ###########################################################################
-    # TODO: 5. Implement and test this function, per its doc-string above.
+    # DONE: 5. Implement and test this function, per its doc-string above.
     #   The testing code (in main) is already written for you.
     #
     #    NOTE: This function requires
@@ -161,6 +167,9 @@ def try_functions():
     #    HINT: see   jump_and_move_turtle   above.
     ###########################################################################
 
+    jump_and_move_turtle(200, 100, 300, 30)
+    jump_and_move_turtle(100, 200, 0, 0)
+    jump_and_move_turtle(-50, 50, 100, 100)
 
 ###############################################################################
 # IMPORTANT: Read the NOTE below before you try to implement the next function!
@@ -198,7 +207,7 @@ def try_methods_and_functions():
       8. Draw a SQUARE whose sides are each of length 50.
     """
     ###########################################################################
-    # TODO: 6. Implement and test this function, per its doc-string above.
+    # DONE: 6. Implement and test this function, per its doc-string above.
     #   The testing code (in main) is already written for you.
     #
     #   NOTE: This function should ** CALL ** the
@@ -206,6 +215,25 @@ def try_methods_and_functions():
     #   function defined above.  If you don't see why, ** ASK FOR HELP. **
     ###########################################################################
 
+like = rg.SimpleTurtle('triangle')
+like.pen = rg.Pen('blue', 5)
+like.backward(150)
+
+like.speed = 1
+draw_many_squares(like,2,100,30)
+
+like.speed = 5
+like.pen = rg.Pen('red',5)
+draw_many_squares(like,10,50,15)
+
+like.speed = 100
+like.pen = rg.Pen('red',35)
+draw_many_squares(like,8,300,60)
+
+like.pen = rg.Pen('black',3)
+like.backward(200)
+like.draw_circle(30)
+like.draw_square(50)
 
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
