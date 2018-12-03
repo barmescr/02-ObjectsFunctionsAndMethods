@@ -30,6 +30,10 @@ def main():
     #even_better_draw_circles(100,50,10,25,'blue',5)
     #even_better_draw_circles(-250,-100,50,5,'red',20)
 
+    crazy_circles(0, 300, 25, 25, 'red', 5)
+    crazy_circles(-100, 500, 5, 50, 'green', 5)
+    crazy_circles(100, 500, 5, 50, 'green', 5)
+
     window.update()
     window.close_on_mouse_click()
 
@@ -211,7 +215,24 @@ def even_better_draw_circles(x,y,radius,number_of_circles,color_of_pen,thickness
 # add code in   main  to draw various circles that form a BEAUTIFUL picture!
 ###############################################################################
 
+def crazy_circles(x,y,radius,number_of_circles,color_of_pen,thickness_of_pen):
+    turtle = rg.SimpleTurtle()
+    turtle.pen = rg.Pen(color_of_pen, thickness_of_pen)
+    turtle.pen_up()
+    turtle.go_to(rg.Point(x, y))
+    turtle.set_heading(0)  # Point "east" (towards the right)
 
+    for k in range(number_of_circles):  # k becomes 1, 2, 3, ... 10
+
+        turtle.pen_up()
+
+        # Go DOWN 15 pixels, ending up pointing east again
+        turtle.right(90)
+        turtle.forward(50)
+        turtle.left(90)
+
+        turtle.pen_down()
+        turtle.draw_circle(radius * k)  # Radius 15, 30, 45, 60, ...
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
 # -----------------------------------------------------------------------------
